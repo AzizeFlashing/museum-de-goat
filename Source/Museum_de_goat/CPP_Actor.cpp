@@ -25,3 +25,11 @@ void ACPP_Actor::Tick(float DeltaTime)
 
 }
 
+void ACPP_Actor::Teleport(AActor* Player)
+{
+	if (Player == nullptr)
+		return;
+	Player->GetActorLocation();
+
+}
+

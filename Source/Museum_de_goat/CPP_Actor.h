@@ -18,9 +18,14 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	UFUNCTION(BlueprintCallable)
+	virtual void Teleport(AActor* Player);
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere)
+	FTransform Position;
+
+
 
 };
