@@ -4,28 +4,28 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "CPP_Actor.generated.h"
+#include "TeleporterActor.generated.h"
 
 UCLASS()
-class MUSEUM_DE_GOAT_API ACPP_Actor : public AActor
+class MUSEUM_DE_GOAT_API ATeleporterActor : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ACPP_Actor();
+	ATeleporterActor();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	UFUNCTION(BlueprintCallable)
-	virtual void Teleport(AActor* Player, FVector Destination);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	UPROPERTY(EditAnywhere)
-	FTransform Position;
 
 
+	
+	UFUNCTION(BlueprintCallable, Category = "Museum|Teleport")
+	void TeleportPlayer(FVector NewPosition);
 
 };
